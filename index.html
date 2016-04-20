@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+            font-family:Cursive;
+            }
+			body{
+			background-image:url("doge.jpg");
+			}
+			a{
+			text-decoration:none;
+			}
+            .topchoice{
+            height:133px;
+            width:400px;
+            border: 1px solid black;
+            color:black;
+            background-color:white;
+            text-align:center;
+            font-family:Garamond;
+            }
+            .bottomchoice{
+            height:133px;
+            width:400px;
+            border: 1px solid gray;
+            color:white;
+            background-color:black;
+            text-align:center;
+            font-family:Garamond;
+            }
+            .titleinfo{
+            height:400px;
+            width:400px;
+            border: 1px solid black;
+			background-color:pink;
+            }
+            .image{
+            height:400px;
+            width:400px;
+            border: 1px solid black;
+            }
+        </style>
+    </head>
+<body>
+<center>
+    
+
+
+<table>
+<tr>
+    <td rowspan="3">
+		<div class="titleinfo" style="float:left">
+			<h1> NationalNotSoSocialist Corporation Games </h1>
+				<P> <b>Hello internet! Our gr8 games can get quite dank, but currently, only our Ted Cruz Text Adventure is in the
+				works. More games will be coming soon, so just you wait! And remember, if your ever feeling lost, just look to our
+				Lord and Saviour ~ Aunt Jemima. Amen, and happy gaming!</b> </P>
+				<p style="font-size:8px"> DISCLAIMER: we do not endorse Socialism, Nazis, or Ted Cruz being the zodiac killer. These games are just made
+				for some jokes and kicks. Please don't be a sue-happy prick. </p>
+		</div>
+    </td>
+	<td>
+        <a href="begin.html">
+        <div class="topchoice">
+            <p> Ted Cruz (Zodiac Killer) Escape! </p>
+        </div>
+        </a>
+    </td>
+	<td rowspan="3">
+	    <div class="image" style="float:right">
+			<img src="pepe.png" height="400px" width="400px" alt="not here yet"/>
+		</div>
+	</td>
+</tr>
+<tr>    
+    <td>
+        <a href="https://www.youtube.com/watch?v=58mah_0Y8TU">
+        <div class="bottomchoice">
+            <p> More levels coming soon. Don't rush it and go clicking these buttons. </p>
+        </div>
+        </a>
+    </td>
+</tr>
+<tr>
+	<td>
+		<a href="https://www.youtube.com/watch?v=rX7XZLcGAxw">
+		<div class="topchoice" onclick="fkingScrub()">
+			<p> You'd be making a terrible mistake by clicking this. (WARNING! THIS IS SERIOUS! DO NOT CLICK!) <p>
+		</div>
+		</a>
+	</td>
+</tr>
+</table>
+</center>
+	<script>
+		function fkingScrub(){
+		alert("ERROR: You've met with a terrible fate, haven't you?");
+		}
+	</script>
+	<body onkeydown="keypressed(event)" onkeyup="keyup(event)">
+		<canvas id="canvas" height="300" width="1200"></canvas>
+		<script type="text/javascript">
+			var canvas=document.getElementById("canvas");
+			var context=canvas.getContext("2d");
+			function keyup(key){
+				if(key.keyCode==39 || key.keyCode==37){speedx=0;}
+				if(key.keyCode==38 || key.keyCode==40){speedy=0;}
+			}
+			function keypressed(key){
+				if(key.keyCode==39){speedx=5;}
+				if(key.keyCode==37){speedx=-5;}
+				if(key.keyCode==38){speedy=-5;}
+				if(key.keyCode==40){speedy=5;}
+			}
+			function trapezoid(){
+				context.beginPath();
+				context.moveTo(x,y+40);
+				context.lineTo(x+40,y);
+				context.lineTo(x+160,y);
+				context.lineTo(x+200,y+40);
+				context.closePath();
+				context.fillStyle="Red";
+				context.fill();
+			}
+			var x=5;
+			var y=5;
+			var speedx=0;
+			var speedy=0;
+			function draw(){
+				/*if(x==500 || x==0){
+					speed*=-1;
+				}*/
+				x+=speedx;
+				y+=speedy;
+					context.clearRect(0,0,canvas.width,canvas.height);
+					trapezoid();
+					setTimeout(draw,10)
+				}
+			draw();
+		</script>
+
+</body>
+</html>
